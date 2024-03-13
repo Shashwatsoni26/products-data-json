@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asyncdemo.css">
+</head>
+<body>
+
+    <div id="wrapper">
+         
+    </div>
+
+    <script>
+         fetch("https://dummyjson.com/products")
+        .then((response)=>{return response.json()})
+        .then((result)=>{console.log(result)
+            showdata(result.products)})
+        .catch((err)=>{console.log(err)})
+
+        function showdata(result){
+
+            for(let i=0;i<result.length;i++){
+
+                const title= document.createElement("h1")
+            title.innerHTML="Title"+"="+result[i].title;
+            document.querySelector("#wrapper").append(title);
+
+            const desc= document.createElement("h2")
+            desc.innerHTML="Description"+"="+result[i].description;
+            document.querySelector("#wrapper").append(desc);
+
+
+            const price= document.createElement("h2")
+            price.innerHTML="PRICE"+"="+result[i].price+"$";
+            document.querySelector("#wrapper").append(price);
+
+
+            const img= document.createElement("img")
+            img.src=result[i].thumbnail
+            document.querySelector("#wrapper").append(img);
+
+            const brand= document.createElement("h2")
+            brand.innerHTML="Brand Name"+"="+result[i].brand;
+            document.querySelector("#wrapper").append(brand);
+
+            const cate= document.createElement("h4")
+            cate.innerHTML="Category"+"="+result[i].category;
+            document.querySelector("#wrapper").append(cate);
+
+            const disc= document.createElement("h4")
+            disc.innerHTML="discount"+"="+result[i].discountPercentage+"%";
+            document.querySelector("#wrapper").append(disc);
+
+            const rating= document.createElement("h4")
+            rating.innerHTML="Rating"+"="+result[i].rating;
+            document.querySelector("#wrapper").append(rating);
+
+            const Stock= document.createElement("h4")
+            Stock.innerHTML="Stock"+"="+result[i].stock;
+            document.querySelector("#wrapper").append(Stock);
+
+
+            }
+            
+           
+        }
+    </script>
+</body>
+</html>
