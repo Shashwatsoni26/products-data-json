@@ -6,8 +6,36 @@
 }
 #wrapper
 {
+    width: 100%;
+    background-color: lightblue;
+    /* justify-content: center; */
+    text-align: center;
+    /* margin: 5rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+ 
+    
+}
+.parrent
+{
+    width: 30%;
+    margin: 20px 10px;
+    border: 2px solid black;
+}
+#wrapper img
+{
     justify-content: center;
     text-align: center;
-    margin: 5rem;
-   
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+}
+.dabba
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
